@@ -84,24 +84,26 @@ For checking the server:
 18. sudo bbb-conf –check
 <br>
 
-<b>Ports used for this:</b><br>
+<b>Ports used for this:</b><br><br>
 <b>TCP PORTS</b><br>
-80   – HTTP
-443  – HTTPS
-1935 – RTMP Port Video conferencing
-7443 – Audio
+80   – HTTP<br>
+443  – HTTPS<br>
+1935 – RTMP Port Video conferencing<br>
+7443 – Audio<br><br>
 
 <b>UDP PORTS</b><br>
-clients must be able to connect on a port within the range 16384-32767 for WebRTC-based audio.
+clients must be able to connect on a port within the range 16384-32767 for WebRTC-based audio.<br>
 
 Command to check port busy/free:
 Netstat –anp|grep <port_number>
 Eg. netstat -anp|grep 443
 
-With BBB installed and hostname applied, the next steps are:
-(A) configure SSL on your server (skip if you don’t have SSL at present)
-(B) configure BigBlueButton to work with your firewall (if needed)
-(C) install the HTML5 client
+With BBB installed and hostname applied, the next steps are:<br>
+(A) configure SSL on your server (skip if you don’t have SSL at present)<br>
+(B) configure BigBlueButton to work with your firewall (if needed)<br>
+(C) install the HTML5 client<br><br>
+
+
 
 
 <br><br>
