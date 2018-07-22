@@ -48,7 +48,7 @@ Now below command will assign the BBB to that IP/domain
 Eg. sudo bbb-conf --setip 87.98.148.253
 Eg2. sudo bbb-conf --setip bbb.datarays.co
 Now BigBlueButton is listening to this Domain/IP address and responding to this API requests.
-<br><br>
+<br>
 
 <b>APP Secret Key</b><br>
 This is important when some plugin is used in upon BBB eg. moodle mod plugin.<br>
@@ -57,26 +57,23 @@ O/P:<br>
 URL(BigBlueButton Server URL): http://87.98.148.253/bigbluebutton/
 Secret (BigBlueButton Shared Secret):  831993ae09d236f75481530065ecc357
 
-<br><br>
+<br>
 
 <b>Install API demos</b><br>
-Here we install sample API demos
-13. Install: sudo apt-get install bbb-demo
-14. Remove: sudo apt-get purge bbb-demo
+Here we install sample API demos<br>
+13. Install: sudo apt-get install bbb-demo <br>
+14. Remove: sudo apt-get purge bbb-demo 
+<br>
 
-<br><br>
-
-<b>Assign the hostname</b><br>
-<br><br>
 <b>Install Client self-check</b><br>
 Here we actually check the drivers of the BBB which are working. Note all should work in order to run video conferencing
 15. Install: sudo apt-get install bbb-check
 <br>
-Link – website_assigned_hostname/check
+Link – website_assigned_hostname/check <br>
 Eg. http://87.98.148.253/check/
 16. Remove - sudo apt-get purge bbb-check
 
-Some links for 1935 port in google groups:
+Some links for 1935 port in google groups:<br>
 https://groups.google.com/forum/#!topic/bigbluebutton-setup/a7apCk2lxZw 
 https://groups.google.com/forum/#!topic/bigbluebutton-setup/a7apCk2lxZw
 https://groups.google.com/forum/#!topic/bigbluebutton-setup/qRHQQcqUERA
@@ -85,9 +82,28 @@ https://groups.google.com/forum/#!topic/bigbluebutton-setup/vGvOkDZ-v_8
 // works fine for the IP address
 For checking the server:
 18. sudo bbb-conf –check
+<br>
 
-<br><br>
-<b>Assign the hostname</b><br>
+<b>Ports used for this:</b><br>
+<b>TCP PORTS</b><br>
+80   – HTTP
+443  – HTTPS
+1935 – RTMP Port Video conferencing
+7443 – Audio
+
+<b>UDP PORTS</b><br>
+clients must be able to connect on a port within the range 16384-32767 for WebRTC-based audio.
+
+Command to check port busy/free:
+Netstat –anp|grep <port_number>
+Eg. netstat -anp|grep 443
+
+With BBB installed and hostname applied, the next steps are:
+(A) configure SSL on your server (skip if you don’t have SSL at present)
+(B) configure BigBlueButton to work with your firewall (if needed)
+(C) install the HTML5 client
+
+
 <br><br>
 <b>Assign the hostname</b><br>
 <br><br>
