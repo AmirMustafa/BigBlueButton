@@ -3,7 +3,7 @@ Linux - Video Conferencing system, includes presentation
 Big Blue Button is basically used for a joint meeting for video conferencing system. For this is required a specific type of server. For proper installations and configuring follow below steps
 
 
-##Minimum Requirements
+## Minimum Requirements
 - Ubuntu 16.04 64-bit OS   	- hostnamectl or cat /etc/os-release
 - 4 GB of memory with swap enabled (8 GB of memory is better) - 19170240KB,  on file /dev/sda2, size 16777212, used 0, command – cat /proc/swaps or swapon -s
 - Quad-core 2.6 GHZ CPU (or faster)  2.30GHz
