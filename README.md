@@ -18,9 +18,38 @@ Big Blue Button is basically used for a joint meeting for video conferencing sys
 
 ## Installation
 
-1. Clone the repository
-2. Download and place Angular and Bootstrap Libraries in your cloned directory.
-3. Open the index.html page
+For this first login to putty(SSl command line) and hit cd / and follow below steps:
+Login through putty and hit cd /
+Execute all commands by root:
+1.	sudo su root 
+Now we will execute commands step by step:
+2. grep "multiverse" /etc/apt/sources.list
+3. echo "deb http://archive.ubuntu.com/ubuntu/ xenial multiverse" | sudo tee -a /etc/apt/sources.list
+4. sudo apt-get update
+5. sudo apt-get dist-upgrade
+   Install apt-get key for BigBlueButton
+6. wget https://ubuntu.bigbluebutton.org/repo/bigbluebutton.asc -O- |
+7. sudo apt-key add –
+8. sudo apt-get update
+9. sudo apt-get install bigbluebutton
+10. sudo bbb-conf –restart
+
+<b>Assign the hostname</b>
+This is the place where we are going to assign the domain name/ IP address where actual BigBlueButton will start
+Now for this we have to check the IP via ping command whether it is running or not:
+Eg. ping <domain/ip>
+Eg2. ping demo.bigbluebutton.org
+Eg3. ping 87.98.148.253 (it should return the address maybe non-stop)  conclusion           IP/domain works 
+o/p: should have been like below
+64 bytes from 146.20.105.32: icmp_seq=1 ttl=44 time=27.5 ms
+
+Now below command will assign the BBB to that IP/domain
+11. sudo bbb-conf --setip <ip/domain>
+Eg. sudo bbb-conf --setip 87.98.148.253
+Eg2. sudo bbb-conf --setip bbb.datarays.co
+Now BigBlueButton is listening to this Domain/IP address and responding to this API requests.
+
+
 
 ##Looks
 
