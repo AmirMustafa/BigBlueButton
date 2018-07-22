@@ -34,7 +34,7 @@ Now we will execute commands step by step:
 9. sudo apt-get install bigbluebutton
 10. sudo bbb-conf –restart
 
-<b>Assign the hostname</b>
+<b>Assign the hostname</b><br>
 This is the place where we are going to assign the domain name/ IP address where actual BigBlueButton will start
 Now for this we have to check the IP via ping command whether it is running or not:
 Eg. ping <domain/ip>
@@ -48,8 +48,19 @@ Now below command will assign the BBB to that IP/domain
 Eg. sudo bbb-conf --setip 87.98.148.253
 Eg2. sudo bbb-conf --setip bbb.datarays.co
 Now BigBlueButton is listening to this Domain/IP address and responding to this API requests.
+<br><br>
 
+<b>APP Secret Key</b><br>
+This is important when some plugin is used in upon BBB eg. moodle mod plugin.<br>
+12.	bbb-conf –secret
+O/P:
+URL(BigBlueButton Server URL): http://87.98.148.253/bigbluebutton/
+Secret (BigBlueButton Shared Secret):  831993ae09d236f75481530065ecc357
 
+<br><br>
+
+<b>Assign the hostname</b><br>
+<br><br>
 
 ##Looks
 
