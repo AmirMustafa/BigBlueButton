@@ -104,7 +104,7 @@ With BBB installed and hostname applied, the next steps are:<br>
 (C) configure SSL on your server (skip if you don’t have SSL at present)<br><br>
 
 
-# (A) FIREWALL UBUNTU SETTINGS:
+## (A) FIREWALL UBUNTU SETTINGS:
 Link - https://help.ubuntu.com/lts/serverguide/firewall.html.en  
 For Ubuntu firewall <br>
 In putty root login run the following commands for all the ports<br>
@@ -118,7 +118,69 @@ i.e. for allowing the ports to pass the firewall:<br>
 22. sudo ufw allow 1935		RTMP  Port Video Conferencing<br>
 23. sudo ufw allow 7443		Audio Port <br><br>
 
+## (B)INSTALL THE HTML5 CLIENT:
 
+Run the following commands:<br>
+24. sudo apt-get update<br>
+25. sudo apt-get dist-upgrade<br>
+26. sudo apt-get install bbb-html5 (some warnings – meteor package install errors)<br>
+27. sudo apt-get purge kms-core-6.0 kms-elements-6.0 kurento-media-server-6.0 (some warnings – meteor package install errors)<br>
+<br><br>
+Also, check the contents of /usr/local/bigbluebutton/bbb-webrtc-sfu/config/default.yml for the entry for kurentoUrl (it is near the top). If kurentoUrl has a wss in it, then<br>
+28. kurentoUrl: wss://<server_name>/kurento<br>
+<br><br>
+Changed to<br>
+ws://87.98.148.253:8888/kurento		(done)<br>
+ws://bbb.datarays.co:8888/kurento<br>
+Execute below command for the test<br>
+29. sudo bbb-conf --setip 87.98.148.253<br><br>
+Install api demos:<br>
+30. sudo apt-get install bbb-demo	<br>
+
+## INSTALL MONGODB AND NODEJS IN SERVER
+BigBlueButton HTML5 client runs on Node JS server and MongoDB as db.<br>
+31. sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6<br><br>
+
+## MongoDB Installation:
+32. echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list<br>
+
+33. sudo apt-get update<br>
+34. sudo apt-get install -y mongodb-org curl<br>
+Next, the HTML5 client uses a nodeJS server to communicate with the BigBlueButton server.<br><br>
+
+## Node JS Installation:
+Check version of the node js:<br>
+35. dpkg -l | grep nodejs<br>
+<br>
+We will uninstall node 4.x package and install node 8.x package as we see in screenshot<br>
+36. curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -<br>
+sudo apt-get install -y nodejs<br>
+<br><br>
+## Yarn Installation:
+37. 
+curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+     echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+     sudo apt-get update && sudo apt-get install yarn<br>
+
+38. sudo apt-get install -y bbb-html5<br>
+
+The solution of 1935 port installation error is use IP of BBB server instead of pointed hostname domain<br>
+39. sudo apt-get update<br>
+40. sudo apt-get dist-upgrade<br>
+
+Now we have to set the ip and port in WebRtcEndpoint.conf.ini page<br>
+Path: /etc/kurento/modules/kurento/WebRtcEndpoint.conf.ini<br>
+Open in vim/nano editor<br>
+Remove ; from these two lines and add IP or hostname and port<br>
+<br>
+stunServerAddress = 87.98.148.253<br>
+stunServerPort = 19302<br>
+
+## Link to HTML5 client:
+http://87.98.148.253/demo/demoHTML5.jsp 
+
+## Test link from BBB site to see how BBB interface looks:
+https://test.bigbluebutton.org/demo/demoHTML5.jsp
 
 
 <br><br>
