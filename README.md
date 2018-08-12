@@ -183,40 +183,6 @@ http://87.98.148.253/demo/demoHTML5.jsp
 https://test.bigbluebutton.org/demo/demoHTML5.jsp
 
 
-<br><br>
-<b>Assign the hostname</b><br>
-<br><br>
-
-##Looks
-
-![Screenshot of BooKart App](https://cloud.githubusercontent.com/assets/15896579/21071612/ce307c80-becb-11e6-9ea7-8464aef1e85d.PNG?raw=true "Screenshot of BooKart App")
-<br/><br/><br/>
-
-![Screenshot of BooKart App](https://cloud.githubusercontent.com/assets/15896579/21071613/ce5827a8-becb-11e6-9109-de309d5c130f.PNG?raw=true "Screenshot of BooKart App")
-<br/><br/><br/>
-
-![Screenshot of BooKart App](https://cloud.githubusercontent.com/assets/15896579/21071614/ce5f526c-becb-11e6-8da8-53a898fd4077.PNG?raw=true "Screenshot of BooKart App")
-<br/><br/><br/>
-
-![Screenshot of BooKart App](https://cloud.githubusercontent.com/assets/15896579/21071607/ce23a2a8-becb-11e6-84e5-a55334f3f57e.PNG?raw=true "Screenshot of BooKart App")
-<br/><br/><br/>
-
-<br/><br/><br/>
-
-##Code Snippets
-
-![Screenshot of BooKart's Code Snippets](https://cloud.githubusercontent.com/assets/15896579/21071608/ce2abd40-becb-11e6-8218-9bc9667be456.png?raw=true "Screenshot of BooKart's Code Snippets")
-<br/><br/><br/>
-
-![Screenshot of BooKart's Code Snippets](https://cloud.githubusercontent.com/assets/15896579/21071609/ce2b6a74-becb-11e6-8159-01a23072f41c.png?raw=true "Screenshot of BooKart's Code Snippets")
-<br/><br/><br/>
-
-![Screenshot of BooKart's Code Snippets](https://cloud.githubusercontent.com/assets/15896579/21071610/ce2c1ef6-becb-11e6-9272-fa44bfa3e5d5.png?raw=true "Screenshot of BooKart's Code Snippets")
-<br/><br/><br/>
-
-![Screenshot of BooKart's Code Snippets](https://cloud.githubusercontent.com/assets/15896579/21071611/ce2ce44e-becb-11e6-9850-348cfe9e7144.png?raw=true "Screenshot of BooKart's Code Snippets")
-<br/><br/><br/>
-
 ## (C)SSL Changes:
 For SSL following steps needs to be done:<br>
 Suppose you receive SSL bundle from any Certificate Authoity (CA) Eg. GeoTrust, Commodo etc.<br>
@@ -252,7 +218,7 @@ So inside .pem (eg. ssl_bundel.pem) file it have first main certificate, then in
 <br>
 Sample Certificate
 <br>
------BEGIN CERTIFICATE-----
+-----BEGIN CERTIFICATE-----<br>
 MIIFtjCCBJ6gAwIBAgIQA7nqAmHvlPhdaj3rsDXrZTANBgkqhkiG9w0BAQsFADBe
 MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3
 d3cuZGlnaWNlcnQuY29tMR0wGwYDVQQDExRHZW9UcnVzdCBSU0EgQ0EgMjAxODAe
@@ -283,9 +249,9 @@ U7kNDm9QvzCevGWaxuRl1fafcOWG0LoQOi3Xpqx1leAhOUrAKad2XeuiR2B2NbF1
 Az61ZEvwKQsc55qQ4gYLOhCpImiqEoLSgyfVPqa1szWnX4lS8uplKzJdjzXATJu3
 4+yJsuOqFU4w6xio0SisQVE6EfLF/HB+7q5vIsa8t+yjzyrGIYjW5bMqPzpcqtgx
 WcreHLm909aAm0q3kR+7OjzSgiWRZgFc4IdRZcJUYZMGFS6Sn/4Tz1p4g3eRM1Md
-zxVQ1pYwpYnxnlMpjunj6O39IkJ5cROl8MU=
------END CERTIFICATE-----
------BEGIN CERTIFICATE-----
+zxVQ1pYwpYnxnlMpjunj6O39IkJ5cROl8MU=<br>
+-----END CERTIFICATE-----<br>
+-----BEGIN CERTIFICATE-----<br>
 MIIEizCCA3OgAwIBAgIQBUb+GCP34ZQdo5/OFMRhczANBgkqhkiG9w0BAQsFADBh
 MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3
 d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBD
@@ -310,8 +276,8 @@ ufejwQMb455OjpIbCZVS+awY/R8pAYsXCnM09GcSVe4ivMswyoCZP/vPEn/LPRhH
 hdgUPk8MlD979RGoUWz7qGAwqJChi28uRds3thx+vRZZIbEyZ62No0tJPzsSGSz8
 nQ//jP8BIwrzBAUH5WcBAbmvgWfrKcuv+PyGPqRcc4T55TlzrBnzAzZ3oClo9fTv
 O9PuiHMKrC6V6mgi0s2sa/gbXlPCD9Z24XUMxJElwIVTDuKB0Q4YMMlnpN/QChJ4
-B0AFsQ+DU0NCO+f78Xf7
------END CERTIFICATE-----
+B0AFsQ+DU0NCO+f78Xf7<br>
+-----END CERTIFICATE-----<br>
 
 <br>
 After this restart your nginx to reflect intermediate certificate 
@@ -452,6 +418,35 @@ sudo service tomcat7 restart<br>
 
 Now try to run the domain name- it should work properly.<br>
 
+##Looks
+
+![Screenshot of BooKart App](https://cloud.githubusercontent.com/assets/15896579/21071612/ce307c80-becb-11e6-9ea7-8464aef1e85d.PNG?raw=true "Screenshot of BooKart App")
+<br/><br/><br/>
+
+![Screenshot of BooKart App](https://cloud.githubusercontent.com/assets/15896579/21071613/ce5827a8-becb-11e6-9109-de309d5c130f.PNG?raw=true "Screenshot of BooKart App")
+<br/><br/><br/>
+
+![Screenshot of BooKart App](https://cloud.githubusercontent.com/assets/15896579/21071614/ce5f526c-becb-11e6-8da8-53a898fd4077.PNG?raw=true "Screenshot of BooKart App")
+<br/><br/><br/>
+
+![Screenshot of BooKart App](https://cloud.githubusercontent.com/assets/15896579/21071607/ce23a2a8-becb-11e6-84e5-a55334f3f57e.PNG?raw=true "Screenshot of BooKart App")
+<br/><br/><br/>
+
+<br/><br/><br/>
+
+##Code Snippets
+
+![Screenshot of BooKart's Code Snippets](https://cloud.githubusercontent.com/assets/15896579/21071608/ce2abd40-becb-11e6-8218-9bc9667be456.png?raw=true "Screenshot of BooKart's Code Snippets")
+<br/><br/><br/>
+
+![Screenshot of BooKart's Code Snippets](https://cloud.githubusercontent.com/assets/15896579/21071609/ce2b6a74-becb-11e6-8159-01a23072f41c.png?raw=true "Screenshot of BooKart's Code Snippets")
+<br/><br/><br/>
+
+![Screenshot of BooKart's Code Snippets](https://cloud.githubusercontent.com/assets/15896579/21071610/ce2c1ef6-becb-11e6-9272-fa44bfa3e5d5.png?raw=true "Screenshot of BooKart's Code Snippets")
+<br/><br/><br/>
+
+![Screenshot of BooKart's Code Snippets](https://cloud.githubusercontent.com/assets/15896579/21071611/ce2ce44e-becb-11e6-9850-348cfe9e7144.png?raw=true "Screenshot of BooKart's Code Snippets")
+<br/><br/><br/>
 ## License
 
 (The MIT License)
