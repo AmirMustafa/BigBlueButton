@@ -99,9 +99,24 @@ Netstat –anp|grep <port_number>
 Eg. netstat -anp|grep 443
 
 With BBB installed and hostname applied, the next steps are:<br>
-(A) configure SSL on your server (skip if you don’t have SSL at present)<br>
+(A) install the HTML5 client<br>
 (B) configure BigBlueButton to work with your firewall (if needed)<br>
-(C) install the HTML5 client<br><br>
+(C) configure SSL on your server (skip if you don’t have SSL at present)<br><br>
+
+
+# (A) FIREWALL UBUNTU SETTINGS:
+Link - https://help.ubuntu.com/lts/serverguide/firewall.html.en  
+For Ubuntu firewall
+In putty root login run the following commands for all the ports
+19. sudo ufw allow <port_number>
+o/p: 
+Rules updated
+Rules updated (v6)
+i.e. for allowing the ports to pass the firewall:
+20. sudo ufw allow 80		HTTP Port
+21. sudo ufw allow 443		HTTPS Port
+22. sudo ufw allow 1935		RTMP  Port Video Conferencing
+23. sudo ufw allow 7443		Audio Port 
 
 
 
