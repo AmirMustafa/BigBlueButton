@@ -99,8 +99,8 @@ Netstat –anp|grep <port_number>
 Eg. netstat -anp|grep 443
 
 With BBB installed and hostname applied, the next steps are:<br>
-(A) install the HTML5 client<br>
-(B) configure BigBlueButton to work with your firewall (if needed)<br>
+(A) configure BigBlueButton to work with your firewall (if needed)<br>
+(B) install the HTML5 client<br>
 (C) configure SSL on your server (skip if you don’t have SSL at present)<br><br>
 
 
