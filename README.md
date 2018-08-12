@@ -418,6 +418,26 @@ sudo service tomcat7 restart<br>
 
 Now try to run the domain name- it should work properly.<br>
 
+## Setup for Moodle
+Now suppose you want to set up for Moodle LMS.<br>
+Download the BigBlueButton plugin from moodle community<br>
+
+Link - https://moodle.org/plugins/mod_bigbluebuttonbn<br><br>
+
+1. Login as Admin<br>
+2. Go to Site Administrator --> Plugin Tab --> Install Plugin<br>
+3. After Success install --> Settings page will open<br>
+4. If not open Go to Site Administrator --> PLugin Tab --> Search BigBlueButton<br>
+5. Now in the first two setting is i.e. BigBlueButon URL and Secret key is required<br>
+6. In BigBlueButtonServer<br><br>
+
+This is important when some plugin is used in upon BBB eg. moodle mod plugin<br>
+bbb-conf –secret<br><br>
+
+O/P:<br>
+URL(BigBlueButton Server URL): http://87.98.148.253/bigbluebutton/<br>
+Secret (BigBlueButton Shared Secret):  831993ae09d236f75481530065ecc357<br><br>
+
 ## Looks
 
 ![Screenshot of BigBlueButton 1st Page](https://user-images.githubusercontent.com/15896579/44000534-3be2c3b0-9e3f-11e8-9c22-e58576c05b6c.png?raw=true "BigBlueButton 1st Page")
