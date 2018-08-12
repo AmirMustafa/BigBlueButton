@@ -420,32 +420,16 @@ Now try to run the domain name- it should work properly.<br>
 
 ##Looks
 
-![Screenshot of BooKart App](https://cloud.githubusercontent.com/assets/15896579/21071612/ce307c80-becb-11e6-9ea7-8464aef1e85d.PNG?raw=true "Screenshot of BooKart App")
+![Screenshot of BigBlueButton 1st Page](https://user-images.githubusercontent.com/15896579/44000534-3be2c3b0-9e3f-11e8-9c22-e58576c05b6c.png?raw=true "BigBlueButton 1st Page")
 <br/><br/><br/>
 
-![Screenshot of BooKart App](https://cloud.githubusercontent.com/assets/15896579/21071613/ce5827a8-becb-11e6-9109-de309d5c130f.PNG?raw=true "Screenshot of BooKart App")
+![Screenshot of BigBlueButton Loader](https://user-images.githubusercontent.com/15896579/44000535-3c0e16aa-9e3f-11e8-8f5b-6a5563671254.png?raw=true "BigBlueButton Loader")
 <br/><br/><br/>
 
-![Screenshot of BooKart App](https://cloud.githubusercontent.com/assets/15896579/21071614/ce5f526c-becb-11e6-8da8-53a898fd4077.PNG?raw=true "Screenshot of BooKart App")
+![Screenshot of BigBlueButton Action select](https://user-images.githubusercontent.com/15896579/44000536-3c37d0ee-9e3f-11e8-8d8e-284152093cd8.png?raw=true "Screenshot of BigBlueButton Action select")
 <br/><br/><br/>
 
-![Screenshot of BooKart App](https://cloud.githubusercontent.com/assets/15896579/21071607/ce23a2a8-becb-11e6-84e5-a55334f3f57e.PNG?raw=true "Screenshot of BooKart App")
-<br/><br/><br/>
-
-<br/><br/><br/>
-
-##Code Snippets
-
-![Screenshot of BooKart's Code Snippets](https://cloud.githubusercontent.com/assets/15896579/21071608/ce2abd40-becb-11e6-8218-9bc9667be456.png?raw=true "Screenshot of BooKart's Code Snippets")
-<br/><br/><br/>
-
-![Screenshot of BooKart's Code Snippets](https://cloud.githubusercontent.com/assets/15896579/21071609/ce2b6a74-becb-11e6-8159-01a23072f41c.png?raw=true "Screenshot of BooKart's Code Snippets")
-<br/><br/><br/>
-
-![Screenshot of BooKart's Code Snippets](https://cloud.githubusercontent.com/assets/15896579/21071610/ce2c1ef6-becb-11e6-9272-fa44bfa3e5d5.png?raw=true "Screenshot of BooKart's Code Snippets")
-<br/><br/><br/>
-
-![Screenshot of BooKart's Code Snippets](https://cloud.githubusercontent.com/assets/15896579/21071611/ce2ce44e-becb-11e6-9850-348cfe9e7144.png?raw=true "Screenshot of BooKart's Code Snippets")
+![Screenshot of BigBlueButton Main Page](https://user-images.githubusercontent.com/15896579/44000537-3c616f80-9e3f-11e8-969a-dade70dcc16a.png?raw=true "Screenshot of BigBlueButton Main Page")
 <br/><br/><br/>
 ## License
 
