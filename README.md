@@ -217,6 +217,241 @@ https://test.bigbluebutton.org/demo/demoHTML5.jsp
 ![Screenshot of BooKart's Code Snippets](https://cloud.githubusercontent.com/assets/15896579/21071611/ce2ce44e-becb-11e6-9850-348cfe9e7144.png?raw=true "Screenshot of BooKart's Code Snippets")
 <br/><br/><br/>
 
+## (C)SSL Changes:
+For SSL following steps needs to be done:<br>
+Suppose you receive SSL bundle from any Certificate Authoity (CA) Eg. GeoTrust, Commodo etc.<br>
+1.	You should have received following files:<br>
+a.	Certificate (.crt  or .cer )<br>
+b.	Intermediate Certificates(if any) (.crt or .cer)<br>
+c.	Private Key +Certificate Signing Request (CSR) (this must be received in the file or in the server)<br>
+Eg. check in the path /home/usr in your server path<br>
+
+Eg. server.csr and server.key file<br>
+
+If somehow you are getting you received empty .key file i.e. 0<br>
+Then you have to resubmit the CSR and receive new Certificate.<br>
+
+2.	Basically means with the help of openssl command, generate new CSR and new Private key, and that CSR must be submitted from your SSL Authority Account(eg. GeoTrust)<br>
+
+openssl req -new -key domainname.key -out domainname.csr<br>
+
+Note each time you hit this command in SSH, it will generate new CSR and private key<br>
+Therefore hit this command once and submit this latest CSR<br>
+
+Login  Reissue  in the input box paste the CSR new generated and submit it.<br>
+
+At the same time you can contact their support live chat and update them about new CSR, so that they can reissue new certificate (via download link)<br>
+
+Once you receive proper certificate and its equivalent private key.<br>
+
+You have to merge all the certificate and intermediate certificates in one file.<br><br>
+
+For GeoTrust, it should be in .pem format
+cat your_domain.crt intermediate.crt root.crt >> ssl-bundle.crt
+So inside .pem (eg. ssl_bundel.pem) file it have first main certificate, then intermediates certificate pasted
+<br>
+Sample Certificate
+<br>
+-----BEGIN CERTIFICATE-----
+MIIFtjCCBJ6gAwIBAgIQA7nqAmHvlPhdaj3rsDXrZTANBgkqhkiG9w0BAQsFADBe
+MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3
+d3cuZGlnaWNlcnQuY29tMR0wGwYDVQQDExRHZW9UcnVzdCBSU0EgQ0EgMjAxODAe
+Fw0xODA3MjcwMDAwMDBaFw0xOTA3MjMxMjAwMDBaMB8xHTAbBgNVBAMTFGJiYi5k
+YXRhcmF5c2FwcHMuY2wewwewIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA
+zqAJC9pNaeCseTH8QQqpxFdmduTfXjpdjJT/g5flM5n8D9YBdUeO9R962PRQnBRK
+dBHrvLl8yp/J7UIDN7xCrOlmwYDHucNyWSdKn87pDXQF4jCkG+HT/Z9OYnKwc6Zt
+6ojYWpe1RhOZm4u8FRdcfmbd92Fa3w0XQU6jaZq5Yfzv5DceOmw/Bg2za8VGczs9
+ga9yTZkL+EJXzcZ7zBDvM/hf8HcusvNQgj2L5RZnDtC/F57jGfVhmCnoHkIdgaiI
+Um+kKvVp33JNpQvt0Zg0b7Cv/rgbsQ7jVpDSZ1n2mQlVEmpmw4VICADlRuNJHX7x
+qWb+fXMV254xtszqRH5JmQIDAQABo4ICrTCCAqkwHwYDVR0jBBgwFoAUkFj/sJx1
+qFFUd7Ht8qNDFjiebMUwHQYDVR0OBBYEFEqvfyeJECp0WuNMUaUJtbiOWDrfMB8G
+A1UdEQQYMBaCFGJiYi5kYXRhcmF5c2FwcHMuY29tMA4GA1UdDwEB/wQEAwIFoDAd
+BgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwPgYDVR0fBDcwNTAzoDGgL4Yt
+aHR0cDovL2NkcC5nZW90cnVzdC5jb20vR2VvVHJ1c3RSU0FDQTIwMTguY3JsMEwG
+A1UdIARFMEMwNwYJYIZIAYb9bAECMCowKAYIKwYBBQUHAgEWHGh0dHBzOi8vd3d3
+LmRpZ2ljZXJ0LmNvbS9DUFMwCAYGZ4EMAQIBMHUGCCsGAQUFBwEBBGkwZzAmBggr
+BgEFBQcwAYYaaHR0cDovL3N0YXR1cy5nZW90cnVzdC5jb20wPQYIKwYBBQUHMAKG
+MWh0dHA6Ly9jYWNlcnRzLmdlb3RydXN0LmNvbS9HZW9UcnVzdFJTQUNBMjAxOC5j
+cnQwCQYDVR0TBAIwADCCAQUGCisGAQQB1nkCBAIEgfYEgfMA8QB3AKS5CZC0GFgU
+h7sTosxncAo8NZgE+RvfuON3zQ7IDdwQAAABZNpdK8IAAAQDAEgwRgIhAOlid6yu
+ZHcAjtYMEmHNoHehs7PxM0y2c6ASPJ+xnWbbAiEA1KrE/aX0YvdCMwNc6ffhtang
+3kkN7KYbM4BuaYZI4JEAdgCHdb/nWXz4jEOZX73zbv9WjUdWNv9KtWDBtOr/XqCD
+DwAAAWTaXSyYAAAEAwBHMEUCIQDxQwP63bH5oC64hRtbj2OO6eB/VQ8KqrqWeDhZ
+PhzK3wIgK0SFugptCsGMEoHwAOADAfNJcyHxWyUQ5b3J0GeQOIowDQYJKoZIhvcN
+AQELBQADggEBAIZH/9CZuFUr+1/ebTYEhQIy9ev7+wSIA29tqhi7Nm12EJ1Qdmok
+U7kNDm9QvzCevGWaxuRl1fafcOWG0LoQOi3Xpqx1leAhOUrAKad2XeuiR2B2NbF1
+Az61ZEvwKQsc55qQ4gYLOhCpImiqEoLSgyfVPqa1szWnX4lS8uplKzJdjzXATJu3
+4+yJsuOqFU4w6xio0SisQVE6EfLF/HB+7q5vIsa8t+yjzyrGIYjW5bMqPzpcqtgx
+WcreHLm909aAm0q3kR+7OjzSgiWRZgFc4IdRZcJUYZMGFS6Sn/4Tz1p4g3eRM1Md
+zxVQ1pYwpYnxnlMpjunj6O39IkJ5cROl8MU=
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+MIIEizCCA3OgAwIBAgIQBUb+GCP34ZQdo5/OFMRhczANBgkqhkiG9w0BAQsFADBh
+MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3
+d3cuZGlnaWNlcnQuY29tMSAwHgYDVQQDExdEaWdpQ2VydCBHbG9iYWwgUm9vdCBD
+QTAeFw0xNzExMDYxMjIzNDVaFw0yNzExMDYxMjIzNDVaMF4xCzAJBgNVBAYTAlVT
+MRUwEwYDVQQKEwxEaWdpQ2VydCBJbmMxGTAXBgNVBAsTEHd3dy5kaWdpY2VydC5j
+b20xHTAbBgNVBAMTFEdlb1RydXN0IFJTQSBDQSAyMDE4MIIBIjANBgkqhkiG9w0B
+AQEFAAOCAQ8AMIIBCgKCAQEAv4rRY03hGOqHXegWPI9/tr6HFzekDPgxP59FVEAh
+150Hm8oDI0q9m+2FAmM/n4W57Cjv8oYi2/hNVEHFtEJ/zzMXAQ6CkFLTxzSkwaEB
+2jKgQK0fWeQz/KDDlqxobNPomXOMJhB3y7c/OTLo0lko7geG4gk7hfiqafapa59Y
+rXLIW4dmrgjgdPstU0Nigz2PhUwRl9we/FAwuIMIMl5cXMThdSBK66XWdS3cLX18
+4ND+fHWhTkAChJrZDVouoKzzNYoq6tZaWmyOLKv23v14RyZ5eqoi6qnmcRID0/i6
+U9J5nL1krPYbY7tNjzgC+PBXXcWqJVoMXcUw/iBTGWzpwwIDAQABo4IBQDCCATww
+HQYDVR0OBBYEFJBY/7CcdahRVHex7fKjQxY4nmzFMB8GA1UdIwQYMBaAFAPeUDVW
+0Uy7ZvCj4hsbw5eyPdFVMA4GA1UdDwEB/wQEAwIBhjAdBgNVHSUEFjAUBggrBgEF
+BQcDAQYIKwYBBQUHAwIwEgYDVR0TAQH/BAgwBgEB/wIBADA0BggrBgEFBQcBAQQo
+MCYwJAYIKwYBBQUHMAGGGGh0dHA6Ly9vY3NwLmRpZ2ljZXJ0LmNvbTBCBgNVHR8E
+OzA5MDegNaAzhjFodHRwOi8vY3JsMy5kaWdpY2VydC5jb20vRGlnaUNlcnRHbG9i
+YWxSb290Q0EuY3JsMD0GA1UdIAQ2MDQwMgYEVR0gADAqMCgGCCsGAQUFBwIBFhxo
+dHRwczovL3d3dy5kaWdpY2VydC5jb20vQ1BTMA0GCSqGSIb3DQEBCwUAA4IBAQAw
+8YdVPYQI/C5earp80sdsdsweAtpdiXft9OlWwJLwKlUtRfccKj8QW/Pp4b7h6QAl
+ufejwQMb455OjpIbCZVS+awY/R8pAYsXCnM09GcSVe4ivMswyoCZP/vPEn/LPRhH
+hdgUPk8MlD979RGoUWz7qGAwqJChi28uRds3thx+vRZZIbEyZ62No0tJPzsSGSz8
+nQ//jP8BIwrzBAUH5WcBAbmvgWfrKcuv+PyGPqRcc4T55TlzrBnzAzZ3oClo9fTv
+O9PuiHMKrC6V6mgi0s2sa/gbXlPCD9Z24XUMxJElwIVTDuKB0Q4YMMlnpN/QChJ4
+B0AFsQ+DU0NCO+f78Xf7
+-----END CERTIFICATE-----
+
+<br>
+After this restart your nginx to reflect intermediate certificate 
+<br>
+sudo service nginx restart
+<br>
+3.	Now you have to create directory in your server named ssl like below
+/etc/nginx/ssl
+<br>
+Paste all the certificate ssl_bundel.pem (certificate), server.key (private key file)<br>
+ 
+4.	You will have to generate a set of 2048-bit diffie-hellman now using below command <br>
+
+Note :- enter this command when you are present in "SSL" directory<br>
+
+openssl dhparam -out /etc/nginx/ssl/dhp-2048.pem 2048 <br>
+So this command will generate dhp-2048.pem file inside ssl directory<br>
+
+5.	Now before editing server files one last step we need to do is to check if your domain’s certificate is set up properly. 
+For this we have a website which checks grade on entering URL<br>
+
+Link - https://dev.ssllabs.com/ssltest/analyze.html?d=bbb.dataraysapps.com&hideResults=on <br>
+
+Grade must be A on result. If grade of your website is coming B, it means intermediate certificates are not installed properly. Check with you Certificate Authority support for proper guidance<br>
+
+
+6.	Now edit the following file in SSH:<br>
+We will give path to all the files generated above plus set server configuration for SSL i.e. 443 port<br>
+
+sudo vi /etc/nginx/sites-available/bigbluebutton<br>
+
+
+server {<br>
+  server_name www.example.com;<br>
+  listen 80;<br>
+  listen [::]:80;<br>
+  listen 443 ssl;<br>
+  listen [::]:443 ssl;<br>
+  ssl_certificate /etc/nginx/ssl/ssl_bundel.pem;<br>
+  ssl_certificate_key /etc/nginx/ssl/server.key;<br>
+  ssl_session_cache shared:SSL:10m;<br>
+  ssl_session_timeout 10m;<br>
+  ssl_protocols TLSv1 TLSv1.1 TLSv1.2;<br>
+  ssl_ciphers "ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:ECDH+AES128:DH+AES:ECDH+3DES:DH+3DES:RSA+AESGCM:RSA+AES:RSA+3DES:!aNULL:!MD5:!DSS:!AES256";<br>
+  ssl_prefer_server_ciphers on;<br>
+
+  ssl_dhparam /etc/nginx/ssl/dhp-2048.pem;<br>
+
+7.	Next step is to configure Free Switch for SSL:<br>
+
+a.	Edit following file in SSH:<br>
+
+vim /opt/freeswitch/etc/freeswitch/sip_profiles/external.xml<br>
+
+Search for ws-binding line:<br>
+<param name="ws-binding" value=":5066"/><br>
+Replace that line with below line<br>
+<param name="wss-binding" value=":7443"/><br>
+
+b.	Edit sip.nginx file like below:<br>
+vim /etc/bigbluebutton/nginx/sip.nginx<br>
+
+location /ws {<br>
+  proxy_pass https://203.0.113.1:7443;<br>
+     proxy_http_version 1.1;<br>
+  proxy_set_header Upgrade $http_upgrade;<br>
+     proxy_set_header Connection "Upgrade";<br>
+     proxy_read_timeout 6h;<br>
+proxy_send_timeout 6h;<br>
+client_body_timeout 6h;<br>
+send_timeout 6h;<br>
+}<br>
+8.	Configure BigBlueButton to load session via HTTPS<br>
+
+vim /var/lib/tomcat7/webapps/bigbluebutton/WEB-INF/classes/bigbluebutton.properties<br>
+
+search for below line:<br>
+
+bigbluebutton.web.serverURL=http://bigbluebutton.example.com<br>
+
+Replace link like below:<br>
+
+bigbluebutton.web.serverURL=https://bigbluebutton.example.com<br>
+
+9.	Now edit screenshare properties:<br>
+
+vim /usr/share/red5/webapps/screenshare/WEB-INF/screenshare.properties<br>
+
+We will change jnlpUrl  and jnlpFile to HTTPS like below:<br>
+
+jnlpUrl=https://bigbluebutton.example.com/screenshare<br>
+jnlpFile=https://bigbluebutton.example.com/screenshare/screenshare.jnlp<br>
+
+10.	Next step is to update the config.xml file<br>
+Path - /var/www/bigbluebutton/client/conf/config.xml<br> 
+
+This can be updated with the help of the single command<br>
+
+http to https:<br>
+sed -e 's|http://|https://|g' -i /var/www/bigbluebutton/client/conf/config.xml<br>
+
+Suppose revert for any reason i.e. https to http:<br>
+sed -e 's|https://|http://|g' -i /var/www/bigbluebutton/client/conf/config.xml<br>
+
+11.	Next, modify the creation of recordings so they are served via HTTPS. <br>
+Edit /usr/local/bigbluebutton/core/scripts/bigbluebutton.yml and change the value for playback_protocol as follows:<br>
+vim /usr/local/bigbluebutton/core/scripts/bigbluebutton.yml<br>
+search for:<br>
+playback_protocol: http<br>
+
+replace with:<br>
+playback_protocol: https<br>
+
+12.	If you have installed the API demos in step 4, <br>
+Edit /var/lib/tomcat7/webapps/demo/bbb_api_conf.jsp and change the value of BigBlueButtonURL use HTTPS as done below:<br>
+vim /var/lib/tomcat7/webapps/demo/bbb_api_conf.jsp<br>
+
+Search for:<br>
+String BigBlueButtonURL = "http://bigbluebutton.example.com/bigbluebutton/";<br>
+Replace with:<br>
+String BigBlueButtonURL = "https://bigbluebutton.example.com/bigbluebutton/";<br>
+
+13.	Finally, to apply all of the configuration changes made, you must restart all components of BigBlueButton:<br>
+bbb-conf --restart<br>
+14.	Path to check the salt.<br>
+Generally if server/ domain change happens too many time. In might happen the salt in the .jsp file does not change<br>
+
+For this you have to two things need to be done:<br>
+a.	In SSH hit bbb-secret<br>
+This will display:<br>
+URL and Secret Key<br>
+In .jsp file  edit /var/lib/tomcat7/webapps/demo/bbb_api_conf.jsp<br>
+Sudo vim /var/lib/tomcat7/webapps/demo/bbb_api_conf.jsp<br>
+See the url and secret key both must match exactly<br>
+
+Now we have to  restart the tomcat:<br>
+sudo service tomcat7 restart<br>
+
+Now try to run the domain name- it should work properly.<br>
+
 ## License
 
 (The MIT License)
