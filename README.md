@@ -106,17 +106,17 @@ With BBB installed and hostname applied, the next steps are:<br>
 
 # (A) FIREWALL UBUNTU SETTINGS:
 Link - https://help.ubuntu.com/lts/serverguide/firewall.html.en  
-For Ubuntu firewall
-In putty root login run the following commands for all the ports
-19. sudo ufw allow <port_number>
-o/p: 
-Rules updated
-Rules updated (v6)
-i.e. for allowing the ports to pass the firewall:
-20. sudo ufw allow 80		HTTP Port
-21. sudo ufw allow 443		HTTPS Port
-22. sudo ufw allow 1935		RTMP  Port Video Conferencing
-23. sudo ufw allow 7443		Audio Port 
+For Ubuntu firewall <br>
+In putty root login run the following commands for all the ports<br>
+19. sudo ufw allow <port_number><br>
+o/p: <br>
+Rules updated<br>
+Rules updated (v6)<br>
+i.e. for allowing the ports to pass the firewall:<br>
+20. sudo ufw allow 80		HTTP Port<br>
+21. sudo ufw allow 443		HTTPS Port<br>
+22. sudo ufw allow 1935		RTMP  Port Video Conferencing<br>
+23. sudo ufw allow 7443		Audio Port <br><br>
 
 
 
