@@ -418,7 +418,7 @@ sudo service tomcat7 restart<br>
 
 Now try to run the domain name- it should work properly.<br>
 
-##Looks
+## Looks
 
 ![Screenshot of BigBlueButton 1st Page](https://user-images.githubusercontent.com/15896579/44000534-3be2c3b0-9e3f-11e8-9c22-e58576c05b6c.png?raw=true "BigBlueButton 1st Page")
 <br/><br/><br/>
